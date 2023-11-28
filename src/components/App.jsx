@@ -7,17 +7,16 @@ import { Container } from './Container';
 
 
 export class App extends Component {
-  options;
-  constructor({ options }) {
+  constructor() {
     super();
     this.options = Object.keys(this.state);
   }
+ 
   state = {
     good: 0,
     neutral: 0,
     bad: 0,
   };
-
 
   countFeedback = (e) => {
     if (!this.options.includes(e.target.textContent.toLowerCase())) {
