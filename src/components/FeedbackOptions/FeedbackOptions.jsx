@@ -1,9 +1,17 @@
+import { Button } from "./Button"
+
+
 export const FeedbackOptions = ({ options, onLeaveFeedback }) =>{
     return (       
             <div onClick={onLeaveFeedback}>
-                {options.map((item) =>
-                <button type="button" key={item}>{item}</button>)}
+            {options.map((item) => {
+                const arr = item.split('');
+                arr[0] = arr[0].toUpperCase();
+                arr.join('');
+                return <Button type="button" key={item}>{arr}</Button>
+            })}
             </div>
                
         )
 }
+
